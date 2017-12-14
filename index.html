@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
     $("html").click(function(e) { 
         var a = new Array("Lp","牛逼","cute","love ss","hahaha","爱生活","爱吹比"); 
         var $i = $("<span />").text(a[a_idx]); 
-        a_idx = Math.cell(Math.random()*a.length)-1;
+        a_idx = Math.ceil(Math.random()*a.length)-1;
         var x = e.pageX, 
         y = e.pageY; 
         $i.css({ 
