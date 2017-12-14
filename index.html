@@ -15,6 +15,36 @@
 
 <!-- <script src="js/bmob.js"> -->
 </script>
+	<script type="text/javascript"> 
+/* 鼠标特效 */ 
+var a_idx = 0; 
+jQuery(document).ready(function($) { 
+    $("html").click(function(e) { 
+        var a = new Array("Lp","牛逼","cute","love ss","hahaha","爱生活","爱吹比"); 
+        var $i = $("<span />").text(a[a_idx]); 
+        a_idx = Math.cell(Math.random()*a.length)-1;
+        var x = e.pageX, 
+        y = e.pageY; 
+        $i.css({ 
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+            "top": y - 20, 
+            "left": x, 
+            "position": "absolute", 
+            "font-weight": "bold", 
+            "color": "#ff6651" 
+        }); 
+        $("body").append($i); 
+        $i.animate({ 
+            "top": y - 180, 
+            "opacity": 0 
+        }, 
+        1500, 
+        function() { 
+            $i.remove(); 
+        }); 
+    }); 
+}); 
+</script>
 <script>
 function login(){
   // Bmob.initialize("546462dc217325a2f35423b7da0690b8","a8c606681b5eaef93d013d918eec4937");
