@@ -21,7 +21,7 @@
 var a_idx = 0; 
 jQuery(document).ready(function($) { 
     $("html").click(function(e) { 
-        var a = new Array("Lp","牛逼","cute","love ss","hahaha","爱生活","爱吹比","爱双双"); 
+        var a = new Array("Lp","牛逼","cute","love ss","hahaha","爱生活","爱吹比","爱双双","爱双双"); 
         a_idx = Math.ceil(Math.random()*a.length)-1;
         var $i = $("<span />").text(a[a_idx]); 
         //alert(a[a_idx]);
@@ -58,6 +58,13 @@ jQuery(document).ready(function($) {
             $i.remove(); 
         }); 
     }); 
+	$(document).keydown(function(event){
+    
+    	if(event.keyCode == '13'){
+        
+        $('#btn').click();
+    }
+}); 	
 }); 
 </script>
 <script>
@@ -191,7 +198,7 @@ body{
       </div>
     </div>
     <div id="btn_login">
-      <button class="btn btn-primary"  onclick="login()" style="width:250px;">登录</button>
+      <button id="btn" class="btn btn-primary"  onclick="login()" style="width:250px;">登录</button>
     </div>
 
   </div>
