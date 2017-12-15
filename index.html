@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -21,19 +22,32 @@ var a_idx = 0;
 jQuery(document).ready(function($) { 
     $("html").click(function(e) { 
         var a = new Array("Lp","牛逼","cute","love ss","hahaha","爱生活","爱吹比","爱双双"); 
-        var $i = $("<span />").text(a[a_idx]); 
         a_idx = Math.ceil(Math.random()*a.length)-1;
+        var $i = $("<span />").text(a[a_idx]); 
+        //alert(a[a_idx]);
         var x = e.pageX, 
         y = e.pageY; 
-        $i.css({ 
-            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
-            "top": y - 20, 
-            "left": x, 
-	    "font-size": 16,	
-            "position": "absolute", 
-            "font-weight": "bold", 
-            "color": "#ff6651" 
-        }); 
+        if(a[a_idx]=="爱双双"){
+        	$i.css({
+        		"z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+	            "top": y - 20, 
+	            "left": x, 
+		    	"font-size": 60,	
+	            "position": "absolute", 
+	            "font-weight": "bold", 
+	            "color": "#ff0000" 
+        	});
+        }else{
+	        $i.css({ 
+	            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+	            "top": y - 20, 
+	            "left": x, 
+		    	"font-size": 20,	
+	            "position": "absolute", 
+	            "font-weight": "bold", 
+	            "color": "#ff6651" 
+	        }); 
+        };
         $("html").append($i); 
         $i.animate({ 
             "top": y - 180, 
