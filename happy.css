@@ -1,0 +1,131 @@
+$bg: darken(#2f2f31, 7);
+$pop: lime;
+$pop_md: rgba(lime, 0.8);
+
+body {
+  padding: 1rem 4rem;
+  background-color: $bg;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  z-index: 8;
+  
+  h1 {
+    font-family: 'Cookie', cursive;
+    font-size: 60px;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 460px;
+    width: 100%;
+    text-align: center;
+    color: $pop;
+    -webkit-filter: drop-shadow( 0 4px 5px black );
+            filter: drop-shadow( 0 4px 5px black );
+    
+    @for $c from 1 through 14 {
+      span:nth-child(#{$c}) {
+        animation: flicker random(50000)+3000+ms linear infinite;
+        color: adjust-hue(yellow, $c * 10%);
+        //animation: flicker 1000 * $c + ms linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes flicker {
+  0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+    opacity:0.99; text-shadow: 0 0 20px $pop,0 0 10px $bg,0 0 2px $pop;
+  }
+  19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% { 
+    opacity:0.4; text-shadow: none; 
+  }
+}
+
+@mixin anim($arg) {
+  stroke-dasharray: $arg;
+  stroke-dashoffset: $arg;
+  animation: dash random(8000)+4000+ms linear normal infinite;
+  animation-fill-mode: forwards;
+
+  @keyframes dash {
+    6%   {stroke-dashoffset: $arg;}
+    40%  {stroke-dashoffset: 0;}
+    60%  {stroke-dashoffset: 0;}
+    94% {stroke-dashoffset: -$arg;}
+  }
+}
+
+@mixin anim2($arg) {
+  stroke-dasharray: $arg;
+  stroke-dashoffset: $arg;
+  animation: dash2 random(10000)+5000+ms linear normal infinite;
+  animation-fill-mode: forwards;
+
+  @keyframes dash2 {
+    0%   {stroke-dashoffset: -$arg;}
+    40% {stroke-dashoffset: 0;}
+    60% {stroke-dashoffset: 0;}
+    100% {stroke-dashoffset: $arg;}
+  }
+}
+
+
+.wrapper1 {
+  .path1 { @include anim(5176.24072265625) }
+  .path2 { @include anim(4918.146484375) }
+}
+
+.wrapper2 {
+  .path1 { @include anim2(5176.24072265625) }
+  .path2 { @include anim2(4918.146484375) }
+}
+
+.wrapper3 {
+  .path1 { @include anim2(5176.24072265625) }
+  .path2 { @include anim2(4918.146484375) }
+}
+
+.wrapper1, .wrapper2, .wrapper3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+}
+.wrapper1 {
+  svg {
+    -webkit-filter: drop-shadow( 0 0 10px $pop );
+            filter: drop-shadow( 0 0 10px $pop );
+  }
+  path {
+    stroke: $pop;
+    stroke-width: 1;
+  }
+}
+
+.wrapper2 {
+  top: 1px;
+  svg {
+    -webkit-filter: drop-shadow( 0 0 10px $pop );
+            filter: drop-shadow( 0 0 10px $pop );
+  }
+  path {
+   stroke: rgba($pop, 0.2);
+   stroke-width: 2;
+  }
+}
+
+#c{
+	z-index: -1;
+	
+}
+.wrapper3 {
+  path {
+   stroke: rgba(#000, 0.5);
+   stroke-width: 10;
+  }
+}
