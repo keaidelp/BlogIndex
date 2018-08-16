@@ -133,11 +133,11 @@ $(function(){
 	function getLineY(x) {//获取直线的Y坐标
 		return Math.sin(10) * x;
 	}
-	function showText(){
+	$("#svgs").on('click',function(){
 		var all = document.getElementById("all");
 		$(all).show();
 		moveAll();
-	}
+	})
 	function moveAll() {
 			$("#all").animate({
 				height: "50px",
@@ -146,15 +146,12 @@ $(function(){
 				$("#all").animate({
 					height: "300px",
 					width: "1600px"
-				}, 3000, function() {
-					//moveAll();
-				});
+				}, 3000);
 			});
 		}
 	showClick();
 	drawHeart();
 	$("#svgs").on('mouseover',function(){
-		showText();
 		layer.msg('心里都是你', {
 		  time:1000,
 		  anim:6
