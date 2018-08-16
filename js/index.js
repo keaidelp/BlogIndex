@@ -146,7 +146,7 @@ $(function(){
 				$("#all").animate({
 					height: "300px",
 					width: "1600px"
-				}, 3000);
+				}, 5910);
 			});
 		}
 	showClick();
