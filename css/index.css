@@ -1,1 +1,50 @@
+body{
+	background-color: pink;
+}
+#svgs{
+	width: 540px;
+	height: 520px;
+	position: relative;
+	right: 920px;
+	top: 20px;
+}
 
+#canvas{
+	position: relative;
+	left: 920px;
+}
+#all{
+	position: relative;
+	bottom: -52px;
+	width: 0px;
+	height: 0px;
+	display: none;
+	
+}
+.textClass{
+	
+}
+#one{
+	font-family: STXingkai;
+	font-size: 52px;
+	background-color: red;
+	color: yellow;
+}
+#two{
+	font-family: STXingkai;
+	font-size: 52px;
+	background-color: red;
+	color: yellow;
+}
+#three{
+	font-family: STXingkai;
+	font-size: 52px;
+	background-color: red;
+	color: yellow;
+}
+#four{
+	font-family: STXingkai;
+	font-size: 52px;
+	background-color: red;
+	color: yellow;
+}
